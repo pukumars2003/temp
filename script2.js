@@ -28,7 +28,7 @@ loader.load(
         // Move the model to the left side and to the bottom
         object.position.x = 0; // Adjust this value as needed
         object.position.z = 0; // Adjust this value as needed
-        object.position.y = -15; // Move the model to the bottom
+        object.position.y = -16; // Move the model to the bottom
 
         // Adjust the orientation of the model
        // object.rotation.y = Math.PI / 5; // Adjust this value as needed

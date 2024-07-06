@@ -6,22 +6,32 @@
     <title>A Simple Three.JS App</title>
     <link rel="stylesheet" href="style1.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+
     <style>
         #container3D canvas {
             width: 90vw !important;
             height: 90vh !important;
             position: initial;
             background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
-            
+        }
+
+        .btnn {
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 </head>
 
-
 <body>
-     <div class="menu-container">
-        <div class="plus flex-center">+</div>
+    <div class="menu-container">
+        <div class="plus flex-center">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+                <path fill="none" stroke="currentColor" stroke-width="2" d="M12 5v14m-7-7h14"></path>
+            </svg>
+        </div>
+        
         <ul class="menu flex-center">
             <li class="menu-item"><a href="#">
                     <i class="fa fa-home"></i>
@@ -35,48 +45,45 @@
            
         </ul>
     </div>
-
+    <br><br><br>
     <div class="container-fluid">
         <div class="area">
-           <div class="context">
+            <div class="context">
                 <h1 style="margin-bottom: 40px;">Temp Mail</h1>
                 <div class="row d-flex justify-content-center">
-                    <div class="col-md-6">
+                    <div class="col-lg-6">
                         <input type="email" class="form-control text-center"
                             style="font-size: large;font-weight: bolder;padding-bottom: 10px; margin-bottom: 20px;"
                             placeholder="gates@gmail.com" readonly>
                     </div>
-
-
                 </div>
-
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <button id="btn1" class="btn btn-primary mb-2">Copy</button>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-10">
-                    <div id="container3D"></div>
-                </div>
-                
+        </div>
+        <div class="row">
+            <div class="col-md-10">
+                <div id="container3D"></div>
             </div>
         </div>
-
-        <ul class="circles">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
     </div>
+
+    <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    
     <script type="module" src="script2.js"></script>
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

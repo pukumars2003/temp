@@ -14,6 +14,19 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 let object;
 let mixer;
 
+// Function to set model properties based on screen size
+function setModelProperties() {
+    if (window.innerWidth <= 768) { // Mobile
+        object.scale.set(10, 10, 10); // Adjust scale for mobile
+        object.position.set(0, -8, 0); // Adjust position for mobile
+        camera.position.set(0, 0, 20); // Adjust camera position for mobile
+    } else { // PC
+        object.scale.set(15, 15, 15); // Adjust scale for PC
+        object.position.set(0, -16, 0); // Adjust position for PC
+        camera.position.set(0, 0, 25); // Adjust camera position for PC
+    }
+}
+
 // Instantiate a loader for the .gltf file
 const loader = new GLTFLoader();
 
@@ -23,15 +36,7 @@ loader.load(
     function (gltf) {
         // If the file is loaded, add it to the scene
         object = gltf.scene;
-        object.scale.set(15, 15, 15); // Adjust the scale (increase the size by 10 times)
-
-        // Move the model to the left side and to the bottom
-        object.position.x = 0; // Adjust this value as needed
-        object.position.z = 0; // Adjust this value as needed
-        object.position.y = -16; // Move the model to the bottom
-
-        // Adjust the orientation of the model
-        // object.rotation.y = Math.PI / 5; // Adjust this value as needed
+        setModelProperties(); // Set model properties based on screen size
 
         scene.add(object);
 
@@ -67,9 +72,6 @@ renderer.setPixelRatio(window.devicePixelRatio); // Ensure crisp rendering on hi
 // Add the renderer to the DOM
 document.getElementById("container3D").appendChild(renderer.domElement);
 
-// Set how far the camera will be from the 3D model
-camera.position.z = 25;
-
 // Add lights to the scene, so we can actually see the 3D model
 const topLight = new THREE.DirectionalLight(0xffffff, 1); // (color, intensity)
 topLight.position.set(600, 600, 600); // Top-left-ish
@@ -94,6 +96,7 @@ window.addEventListener("resize", function () {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
+    if (object) setModelProperties(); // Update model properties on resize
 });
 
 // Add touch controls for mobile devices

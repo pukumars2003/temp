@@ -48,18 +48,29 @@ html, body {
 }
 
 .plus {
-    font-size: var(--font-size);
-    font-weight: bolder;
     width: var(--container-width-height);
     height: var(--container-width-height);
     border-radius: 50%;
     background-color: rgb(255, 255, 255);
     color: var(--menu-item-color);
-    border: 4px solid rgb(0, 117, 250);
+    border: 4px solid rgb(142, 250, 0);
     transition: transform 1s ease-in-out;
     cursor: pointer;
     z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.plus svg {
+    width: 50%;
+    height: 50%;
+}
+
+.menu-container.active .plus {
+    transform: rotate(225deg);
+}
+
 
 .menu-container.active .plus {
     transform: rotate(225deg);
@@ -131,7 +142,7 @@ li.menu-item a:hover i::after {
 }
 
 .area {
-    padding-top:10px;
+   padding-top: 7%;
     position: relative;
     width: 100vw;
     height: 100vh;

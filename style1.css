@@ -2,27 +2,29 @@
 
 *,
 *::before,
-*::after{
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-    width: 100%;
-    font-family: 'Exo', sans-serif;
-    background: #4e54c8;
-    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
-    background: linear-gradient(to left, #8f94fb, #4e54c8);
-    overflow: hidden;
-}
 :root {
     --border-radius: 4rem;
     --container-width-height: var(--border-radius);
     --font-size: 2rem;
     --menu-item-color: linear-gradient(to right bottom, #5a8bd4, #508cda, #428de0, #2f8ee5, #008feb);
     --menu-item-hover-color: #00ffff;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Exo', sans-serif;
+    background: #4e54c8;
+    background: -webkit-linear-gradient(to right bottom, #5a8bd4, #508cda, #428de0, #2f8ee5, #008feb);
+    background:  linear-gradient(to right bottom, #5a8bd4, #508cda, #428de0, #2f8ee5, #008feb);
+    overflow: hidden;
 }
 .flex-center {
     display: flex;
@@ -122,14 +124,6 @@ li.menu-item a:hover i::after {
     transform: scaleX(1);
 }
 
-
-.context {
-    width: 100%;
-    
-    top: 50%;
-    transform: translateY(20%);
-}
-
 .context h1 {
     text-align: center;
     color: #fff;
@@ -137,6 +131,7 @@ li.menu-item a:hover i::after {
 }
 
 .area {
+   padding-top: 7%;
     position: relative;
     width: 100vw;
     height: 100vh;

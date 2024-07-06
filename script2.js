@@ -23,7 +23,7 @@ loader.load(
     function (gltf) {
         // If the file is loaded, add it to the scene
         object = gltf.scene;
-        object.scale.set(13, 13, 13); // Adjust the scale (increase the size by 10 times)
+        object.scale.set(10, 10, 10); // Adjust the scale (increase the size by 10 times)
 
         // Move the model to the left side and to the bottom
         object.position.x = 0; // Adjust this value as needed
